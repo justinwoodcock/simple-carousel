@@ -1,1 +1,27 @@
-#state-template
+.simple-carousel
+    position: relative
+    display: block
+    overflow: hidden
+    .slide
+        position: absolute
+        opacity: 0
+        transition: 1s opacity
+        .slide-image
+            width: 100%
+        .slide-caption
+            position: absolute
+            font-family: sans-serif
+            font-size: 18px
+            bottom: 30px
+            right: 30px
+            padding: 10px 15px
+            color: #fff
+            background: rgba(#000, 0.35)
+            border-radius: 3px
+            border: 1px solid rgba(#000, .4)
+        &.show
+            opacity: 1
+            position: static
+            transition: 1s opacity
+.navigation
+    margin: 20px 0

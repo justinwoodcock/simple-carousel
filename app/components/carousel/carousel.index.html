@@ -1,14 +1,26 @@
 <div class="container" id="view-main">
     <div class="row">
         <div class="col-xs-12">
-            <h1>Carousel</h1>
             <simple-carousel></simple-carousel>
         </div>
         <div class="col-xs-12">
+            <h1>Simple Carousel</h1>
+            <p>Just a basic carousel for my Western Digital coding exercise.</p>
             <div class="simple-carousel">
-                <div class="slide" ng-repeat="slide in slides track by $index">
-                    <img class="img-responsive" ng-src="{{slide}}" />
-                </div>
+                <figure class="slide" ng-repeat="slide in slides" ng-class="{'show': imgIndex===$index}">
+                    <img ng-src="{{slide.src}}" class="slide-image img-responsive" alt="" width="100%" />
+                    <figcaption class="slide-caption">{{slide.caption}}</figcaption>
+                </figure> 
+            </div>
+            <div class="navigation clearfix">
+                <button class="btn btn-primary pull-left prev" ng-click="navigate('back')" ng-disabled="imgIndex===0">
+                    <i class="icon-left-open"></i>
+                    back
+                </button>
+                <button class="btn btn-primary pull-right next" ng-click="navigate('next')" ng-disabled="imgIndex===slideLength-1">
+                    next
+                    <i class="icon-right-open"></i>
+                </button>
             </div>
         </div>
     </div>
