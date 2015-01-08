@@ -1,0 +1,15 @@
+<div class="container" id="view-main">
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>Carousel</h1>
+            <simple-carousel></simple-carousel>
+        </div>
+        <div class="col-xs-12">
+            <div class="simple-carousel">
+                <div class="slide" ng-repeat="slide in slides track by $index">
+                    <img class="img-responsive" ng-src="{{slide}}" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
